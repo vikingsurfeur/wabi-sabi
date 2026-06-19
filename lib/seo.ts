@@ -11,5 +11,13 @@ export function organizationJsonLd() {
     telephone: site.phoneE164,
     slogan: site.tagline,
     description: site.uvp,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: site.email,
+      telephone: site.phoneE164,
+      areaServed: "FR",
+      availableLanguage: "French",
+    },
   };
 }
