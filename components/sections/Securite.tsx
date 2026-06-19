@@ -24,13 +24,16 @@ export function Securite() {
         </Reveal>
         <ul className="mt-12 grid gap-6 md:grid-cols-2">
           {securite.points.map((point, i) => (
-            <Reveal key={point} delay={i * 0.08}>
-              <li className="text-creme/90 flex gap-3">
-                <span aria-hidden="true" className="text-ocre">
-                  —
-                </span>
-                <span>{point}</span>
-              </li>
+            <Reveal
+              key={point}
+              as="li"
+              delay={i * 0.08}
+              className="text-creme/90 flex gap-3"
+            >
+              <span aria-hidden="true" className="text-ocre">
+                —
+              </span>
+              <span>{point}</span>
             </Reveal>
           ))}
         </ul>

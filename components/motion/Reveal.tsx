@@ -3,19 +3,26 @@
 import { motion, useReducedMotion } from "motion/react";
 
 // Apparition douce au scroll (fondu + légère translation). Inerte si reduced-motion.
+// `as` permet de rendre un <li> directement (sémantique de liste préservée dans un <ul>/<ol>).
 export function Reveal({
   children,
   delay = 0,
   className,
+  as = "div",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  as?: "div" | "li";
 }) {
   const reduced = useReducedMotion();
-  if (reduced) return <div className={className}>{children}</div>;
+  if (reduced) {
+    const Tag = as;
+    return <Tag className={className}>{children}</Tag>;
+  }
+  const MotionTag = as === "li" ? motion.li : motion.div;
   return (
-    <motion.div
+    <MotionTag
       className={className}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -23,6 +30,6 @@ export function Reveal({
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
     >
       {children}
-    </motion.div>
+    </MotionTag>
   );
 }

@@ -13,7 +13,7 @@ export function UseCases() {
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="text-anthracite/70 mt-4 max-w-2xl">
+          <p className="text-anthracite/80 mt-4 max-w-2xl">
             Quelques usages concrets par métier, à titre illustratif. Vos cas
             réels émergent de l&apos;audit.
           </p>

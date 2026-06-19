@@ -23,7 +23,9 @@ export function Trio() {
             <Reveal key={m.prenom} delay={i * 0.1}>
               <Monogram prenom={m.prenom} />
               <h3 className="mt-6 text-2xl">{m.prenom}</h3>
-              <p className="text-bronze mt-1 text-sm font-semibold">{m.role}</p>
+              <p className="text-monstera mt-1 text-sm font-semibold">
+                {m.role}
+              </p>
               <p className="text-anthracite/80 mt-4">{m.description}</p>
             </Reveal>
           ))}

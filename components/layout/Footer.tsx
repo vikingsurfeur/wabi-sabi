@@ -22,7 +22,7 @@ export function Footer() {
           </Link>
         </div>
       </Container>
-      <Container className="text-creme/50 mt-10 text-xs">
+      <Container className="text-creme/70 mt-10 text-xs">
         © {new Date().getFullYear()} {site.name}. Tous droits réservés.
       </Container>
     </footer>
