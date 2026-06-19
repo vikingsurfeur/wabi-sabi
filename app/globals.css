@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette Wabi Sabi (hex verbatim de la charte) */
+  --color-monstera: #0b4628;
+  --color-bronze: #c2a687;
+  --color-anthracite: #3c3b40;
+  --color-creme: #e5e0da;
+  --color-ocre: #f2b705;
+
+  /* Typographies (les variables --font-* sont posées par next/font sur <html>) */
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  /* prefers-reduced-motion : on neutralise aussi le smooth-scroll CSS (ancres) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    background-color: var(--color-creme);
+    color: var(--color-anthracite);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-monstera);
+    text-wrap: balance;
+  }
+  ::selection {
+    background-color: var(--color-ocre);
+    color: var(--color-anthracite);
+  }
+}
