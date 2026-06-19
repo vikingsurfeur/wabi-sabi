@@ -22,8 +22,8 @@ export default function Home() {
       <Hero />
       <Manifeste />
       <Piliers />
-      <Trio />
       <Methode />
+      <Trio />
       <Securite />
       <Kpis />
       <UseCases />
