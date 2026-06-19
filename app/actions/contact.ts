@@ -69,10 +69,9 @@ export async function contactAction(
     if (error) {
       // Journalisé côté serveur → visible dans les logs de fonction Vercel.
       console.error("Resend send error:", error);
-      // DEBUG TEMPORAIRE : on remonte le détail Resend + le destinataire utilisé.
       return {
         status: "error",
-        message: `DEBUG → to=${to} | ${error.name ?? "?"}: ${error.message ?? JSON.stringify(error)}`,
+        message: `Une erreur est survenue. Réessayez ou écrivez-nous à ${site.email}.`,
       };
     }
     return {
