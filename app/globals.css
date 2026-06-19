@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Palette Wabi Sabi (hex verbatim de la charte) */
+  --color-monstera: #0b4628;
+  --color-bronze: #c2a687;
+  --color-anthracite: #3c3b40;
+  --color-creme: #e5e0da;
+  --color-ocre: #f2b705;
+
+  /* Typographies (les variables --font-* sont posées par next/font sur <html>) */
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: var(--color-creme);
+    color: var(--color-anthracite);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-monstera);
+    text-wrap: balance;
+  }
+  ::selection {
+    background-color: var(--color-ocre);
+    color: var(--color-anthracite);
+  }
 }
