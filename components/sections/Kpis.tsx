@@ -11,7 +11,7 @@ export function Kpis() {
           {kpis.map((k, i) => (
             <Reveal key={k.libelle} delay={i * 0.1} className="text-center">
               <p className="font-display text-monstera text-6xl">{k.valeur}</p>
-              <p className="text-anthracite/70 mt-2">{k.libelle}</p>
+              <p className="text-anthracite/90 mt-2">{k.libelle}</p>
             </Reveal>
           ))}
         </div>

@@ -15,7 +15,7 @@ export function KintsugiLine({ className }: { className?: string }) {
     >
       <motion.path
         d="M0 10 C 80 2, 140 18, 210 9 S 340 2, 400 11"
-        stroke="#f2b705"
+        stroke="currentColor"
         strokeWidth={2}
         strokeLinecap="round"
         initial={reduced ? { pathLength: 1 } : { pathLength: 0 }}

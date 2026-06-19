@@ -17,6 +17,12 @@
   html {
     scroll-behavior: smooth;
   }
+  /* prefers-reduced-motion : on neutralise aussi le smooth-scroll CSS (ancres) */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
   body {
     background-color: var(--color-creme);
     color: var(--color-anthracite);

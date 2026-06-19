@@ -8,7 +8,7 @@ export function organizationJsonLd() {
     name: site.name,
     url: site.url,
     email: site.email,
-    telephone: site.phone,
+    telephone: site.phoneE164,
     slogan: site.tagline,
     description: site.uvp,
   };

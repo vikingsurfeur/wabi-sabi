@@ -5,7 +5,7 @@ description: Charte visuelle du site Wabi Sabi (palette Monstera/Bronze/Anthraci
 
 # Design System — Wabi Sabi
 
-Esthétique : *wabi-sabi* (beauté de l'épure, du naturel, de l'imparfait) + concept **Kintsugi**
+Esthétique : _wabi-sabi_ (beauté de l'épure, du naturel, de l'imparfait) + concept **Kintsugi**
 (réparer à l'or : l'IA est la ligne d'or dans les fissures de l'entreprise). Sobre, organique,
 haut de gamme, généreux en blanc tournant. Jamais clinquant, jamais « template ».
 
@@ -15,7 +15,7 @@ l'option la plus calme et la plus dépouillée : le wabi-sabi privilégie le ret
 
 ## Principes directeurs
 
-1. **L'épure d'abord.** Un écran réussi est un écran où l'on a su *retirer*. Hiérarchie claire,
+1. **L'épure d'abord.** Un écran réussi est un écran où l'on a su _retirer_. Hiérarchie claire,
    une seule idée par bloc, beaucoup de vide. Le blanc tournant (négatif) est un élément de design
    actif, pas un reste.
 2. **L'imperfection assumée.** Asymétrie maîtrisée, traits qui respirent, formes organiques.
@@ -29,13 +29,13 @@ l'option la plus calme et la plus dépouillée : le wabi-sabi privilégie le ret
 
 ## Palette (hex verbatim)
 
-| Token | Hex | Rôle |
-|---|---|---|
-| `monstera` | `#0B4628` | Vert profond identitaire. Sections sombres, marque, ancrage. |
-| `bronze` | `#C2A687` | Or doux, matière/texture/humain. Traits, accents chauds, filets. |
-| `anthracite` | `#3C3B40` | Structure (code/infra). Texte principal, fonds sombres alternatifs. |
-| `creme` | `#E5E0DA` | Papier washi. **Fond par défaut du site** (jamais blanc pur). |
-| `ocre` | `#F2B705` | Golden Ocre / Kintsugi. **Accent action ≈10 %** : CTA, veines dorées. |
+| Token        | Hex       | Rôle                                                                  |
+| ------------ | --------- | --------------------------------------------------------------------- |
+| `monstera`   | `#0B4628` | Vert profond identitaire. Sections sombres, marque, ancrage.          |
+| `bronze`     | `#C2A687` | Or doux, matière/texture/humain. Traits, accents chauds, filets.      |
+| `anthracite` | `#3C3B40` | Structure (code/infra). Texte principal, fonds sombres alternatifs.   |
+| `creme`      | `#E5E0DA` | Papier washi. **Fond par défaut du site** (jamais blanc pur).         |
+| `ocre`       | `#F2B705` | Golden Ocre / Kintsugi. **Accent action ≈10 %** : CTA, veines dorées. |
 
 Accents secondaires (usage très ponctuel, hex à confirmer depuis `docs/wabi-sabi/color-system.png`) :
 famille warm « Creative Energy » (Terracotta, Coral Deep, Plum) et cool « Tech & Growth »
@@ -87,8 +87,10 @@ leurs rôles (pas de paragraphe courant en Fraunces, pas de gros titre en Jakart
   pertinent pour des titres de carte sur surface sombre (chaleur, hiérarchie secondaire).
 - **Corps** : Plus Jakarta Sans, ~1rem → ~1.25rem, `leading` généreux (~1.6), mesure limitée
   (`max-w-2xl` à `max-w-prose`) pour le confort de lecture.
-- **Eyebrow / sur-titre** : Plus Jakarta Sans, petit, `uppercase`, `tracking` large (~0.25em),
-  couleur Bronze. Sert à étiqueter une section sans rivaliser avec le H.
+- **Eyebrow / sur-titre** : Plus Jakarta Sans, petit, `uppercase`, `tracking` large (~0.25em).
+  Sur surface CLAIRE (crème) : couleur **Anthracite ou Monstera** — le Bronze sur crème échoue
+  l'AA (ratio ~1.75) et est INTERDIT pour ce texte. Le Bronze comme eyebrow est réservé aux
+  surfaces SOMBRES (Monstera/Anthracite). Sert à étiqueter une section sans rivaliser avec le H.
 - **Italique Fraunces** : à réserver aux accents calligraphiques (un mot, une citation),
   jamais pour un paragraphe entier.
 
@@ -138,7 +140,7 @@ implémentations vivent dans `components/ui` (primitives), `components/sections`
 
 ### Hero
 
-- Eyebrow Bronze (tagline) → H1 Fraunces Monstera → **veine Kintsugi** (signature) → UVP en corps
+- Eyebrow Anthracite/Monstera (tagline) → H1 Fraunces Monstera → **veine Kintsugi** (signature) → UVP en corps
   atténué (`anthracite/80`) → groupe de CTA (un `primary` ocre + un `ghost`).
 - Apparition orchestrée en **stagger** doux (cf. skill `motion-lenis-patterns`, `delay` croissant
   ~0.1 s par bloc). Jamais d'autoplay vidéo lourd ni d'animation en boucle dans le hero.
@@ -169,7 +171,7 @@ implémentations vivent dans `components/ui` (primitives), `components/sections`
 ## Motion (cf. skill `motion-lenis-patterns`)
 
 Sobre et lent (~0.6–0.9 s, easing doux), reveals discrets au scroll, smooth-scroll Lenis léger.
-Motif **Kintsugi** : veines dorées qui se *tracent* (SVG path draw). `prefers-reduced-motion`
+Motif **Kintsugi** : veines dorées qui se _tracent_ (SVG path draw). `prefers-reduced-motion`
 TOUJOURS respecté. Anime uniquement `transform`/`opacity`.
 
 ## Texture & formes
@@ -192,17 +194,17 @@ jamais de la lisibilité.
 
 ### Appariements texte/fond recommandés
 
-| Fond | Texte conseillé | Statut |
-|---|---|---|
-| `creme` `#E5E0DA` | `anthracite` `#3C3B40` | ✅ Combo par défaut, fort contraste, AA largement validé. |
-| `creme` `#E5E0DA` | `monstera` `#0B4628` | ✅ Titres/accents, contraste élevé, AA validé. |
-| `monstera` `#0B4628` | `creme` `#E5E0DA` | ✅ Sections sombres, AA validé. |
-| `monstera` `#0B4628` | `bronze` `#C2A687` | ✅ Titres de carte sur sombre, large/UI ; vérifier en corps fin. |
-| `anthracite` `#3C3B40` | `creme` `#E5E0DA` | ✅ Surface technique, AA validé. |
-| `creme` `#E5E0DA` | `bronze` `#C2A687` | ⚠️ Faible — proscrit pour le corps ; éventuellement très gros titre décoratif. |
-| `creme` `#E5E0DA` | `ocre` `#F2B705` | ⚠️ Faible — texte ocre sur clair INTERDIT (voir ci-dessous). |
-| `ocre` `#F2B705` | `anthracite` `#3C3B40` | ✅ CTA primaire : texte foncé sur ocre, lisible. |
-| `ocre` `#F2B705` | `creme` `#E5E0DA` | ❌ À proscrire (deux clairs, contraste insuffisant). |
+| Fond                   | Texte conseillé        | Statut                                                                         |
+| ---------------------- | ---------------------- | ------------------------------------------------------------------------------ |
+| `creme` `#E5E0DA`      | `anthracite` `#3C3B40` | ✅ Combo par défaut, fort contraste, AA largement validé.                      |
+| `creme` `#E5E0DA`      | `monstera` `#0B4628`   | ✅ Titres/accents, contraste élevé, AA validé.                                 |
+| `monstera` `#0B4628`   | `creme` `#E5E0DA`      | ✅ Sections sombres, AA validé.                                                |
+| `monstera` `#0B4628`   | `bronze` `#C2A687`     | ✅ Titres de carte sur sombre, large/UI ; vérifier en corps fin.               |
+| `anthracite` `#3C3B40` | `creme` `#E5E0DA`      | ✅ Surface technique, AA validé.                                               |
+| `creme` `#E5E0DA`      | `bronze` `#C2A687`     | ⚠️ Faible — proscrit pour le corps ; éventuellement très gros titre décoratif. |
+| `creme` `#E5E0DA`      | `ocre` `#F2B705`       | ⚠️ Faible — texte ocre sur clair INTERDIT (voir ci-dessous).                   |
+| `ocre` `#F2B705`       | `anthracite` `#3C3B40` | ✅ CTA primaire : texte foncé sur ocre, lisible.                               |
+| `ocre` `#F2B705`       | `creme` `#E5E0DA`      | ❌ À proscrire (deux clairs, contraste insuffisant).                           |
 
 ### Règles de contraste impératives
 
@@ -211,7 +213,7 @@ jamais de la lisibilité.
   **trait décoratif** (Kintsugi, `aria-hidden`), jamais de la couleur de texte sur clair.
 - **Bronze sur crème** ne convient pas au corps. Réservé aux gros éléments décoratifs ou à l'eyebrow
   uniquement si le test de contraste passe pour la taille concernée ; sinon préférer Anthracite/Monstera.
-- **Atténuations d'opacité** (`anthracite/80`, `creme/80`, etc.) : recalculer le contraste *effectif*
+- **Atténuations d'opacité** (`anthracite/80`, `creme/80`, etc.) : recalculer le contraste _effectif_
   contre le fond réel. `creme/70` sur crème peut casser l'AA — n'atténuer que ce qui reste lisible
   (corps secondaire à ~70–80 % maxi sur fond suffisamment contrasté).
 - **Ne jamais coder l'information par la seule couleur.** Ajouter un libellé, une icône ou une forme

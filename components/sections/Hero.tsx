@@ -9,7 +9,7 @@ export function Hero() {
     <header className="relative overflow-hidden py-32 md:py-44">
       <Container>
         <Reveal>
-          <p className="text-bronze font-sans text-sm tracking-[0.25em] uppercase">
+          <p className="text-monstera font-sans text-sm tracking-[0.25em] uppercase">
             {site.tagline}
           </p>
         </Reveal>
