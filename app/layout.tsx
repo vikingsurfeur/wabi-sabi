@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { fraunces, jakarta } from "@/lib/fonts";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -33,7 +35,11 @@ export default function RootLayout({
       className={`${fraunces.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <Header />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
