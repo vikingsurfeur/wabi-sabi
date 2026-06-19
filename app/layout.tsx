@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { fraunces, jakarta } from "@/lib/fonts";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,7 +19,9 @@ export default function RootLayout({
       lang="fr"
       className={`${fraunces.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
