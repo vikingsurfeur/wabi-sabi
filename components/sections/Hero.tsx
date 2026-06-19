@@ -14,8 +14,8 @@ export function Hero() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h1 className="mt-6 max-w-3xl text-5xl leading-[1.05] md:text-7xl">
-            {site.name}
+          <h1 className="mt-6 max-w-4xl text-5xl leading-[1.05] md:text-7xl">
+            L&apos;IA ne s&apos;improvise pas. Elle s&apos;intègre.
           </h1>
         </Reveal>
         <Reveal delay={0.2}>
@@ -28,8 +28,8 @@ export function Hero() {
         </Reveal>
         <Reveal delay={0.4}>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Button href={`mailto:${site.email}`}>Prendre 45 min</Button>
-            <Button href="#piliers" variant="ghost">
+            <Button href="/contact">Prendre 45 min</Button>
+            <Button href="#approche" variant="ghost">
               Notre approche
             </Button>
           </div>
