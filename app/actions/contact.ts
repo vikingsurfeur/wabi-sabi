@@ -53,6 +53,7 @@ export async function contactAction(
   }
 
   const { nom, email, organisation, type, message } = parsed.data;
+  const to = process.env.CONTACT_TO ?? site.email;
   try {
     const resend = new Resend(apiKey);
     // Resend ne lève PAS sur erreur API : elle est renvoyée dans `error`
@@ -60,7 +61,7 @@ export async function contactAction(
     const { error } = await resend.emails.send({
       from:
         process.env.CONTACT_FROM ?? "Site Wabi Sabi <onboarding@resend.dev>",
-      to: process.env.CONTACT_TO ?? site.email,
+      to,
       replyTo: email,
       subject: `Nouveau contact — ${organisation} (${type})`,
       text: `Nom: ${nom}\nEmail: ${email}\nOrganisation: ${organisation}\nType: ${type}\n\n${message}`,
@@ -68,10 +69,10 @@ export async function contactAction(
     if (error) {
       // Journalisé côté serveur → visible dans les logs de fonction Vercel.
       console.error("Resend send error:", error);
-      // DEBUG TEMPORAIRE : on remonte le détail Resend dans l'UI pour diagnostic.
+      // DEBUG TEMPORAIRE : on remonte le détail Resend + le destinataire utilisé.
       return {
         status: "error",
-        message: `DEBUG Resend → ${error.name ?? "?"}: ${error.message ?? JSON.stringify(error)}`,
+        message: `DEBUG → to=${to} | ${error.name ?? "?"}: ${error.message ?? JSON.stringify(error)}`,
       };
     }
     return {
