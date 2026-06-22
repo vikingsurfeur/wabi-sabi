@@ -6,7 +6,7 @@ export const legal = {
     adresse: "À COMPLÉTER",
     siret: "À COMPLÉTER",
     directeurPublication: "À COMPLÉTER",
-    email: "contact@wabisabi.fr",
+    email: "allowabisabi@gmail.com",
     telephone: "07 78 54 33 67",
   },
   hebergeur: {
