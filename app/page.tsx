@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Manifeste } from "@/components/sections/Manifeste";
 import { Piliers } from "@/components/sections/Piliers";
+import { Processus } from "@/components/sections/Processus";
 import { Trio } from "@/components/sections/Trio";
 import { Methode } from "@/components/sections/Methode";
 import { Securite } from "@/components/sections/Securite";
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
       <Manifeste />
       <Piliers />
+      <Processus />
       <Methode />
       <Trio />
       <Securite />
